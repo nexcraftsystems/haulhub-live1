@@ -25,7 +25,7 @@ const Home: React.FC = () => {
                <Logo className="h-16 md:h-24" isDark />
             </div>
             <h1 className="text-4xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight animate-in slide-in-from-bottom-8 duration-700">
-              Your Lightning Fast <span className="text-blue-500">Logistics</span> Partner
+              Your Lightning Fast <span className="text-blue-500 drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]">Logistics</span> Partner
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed animate-in slide-in-from-bottom-12 duration-700 delay-100">
               Haul Hub Sdn Bhd is a newly established logistics force delivering reliable, compliant, and cost-effective freight solutions across the globe.
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
             {/* Logo Image Side */}
             <div className="relative group overflow-hidden rounded-[2.5rem] shadow-2xl shadow-blue-900/10">
               <img 
-                src="https://images.unsplash.com/photo-1454165833767-02a498074d44?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?" 
                 alt="Strategic Partnership and Planning" 
                 className="w-full h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-[4000ms]"
               />
