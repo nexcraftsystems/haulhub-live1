@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Network, Fullscreen, Radio, ArrowRight } from 'lucide-react';
@@ -20,7 +19,6 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
             <div className="mb-10 animate-in fade-in slide-in-from-top-10 duration-1000">
-               {/* Hero uses Dark Background, so Logo renders 'wordstype' */}
                <Logo className="h-16 md:h-24" isDark />
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold mb-8 leading-tight animate-in slide-in-from-left-8 duration-700">
@@ -48,9 +46,8 @@ const Home: React.FC = () => {
             {/* Logo Image Side with Gradient Fade */}
             <div className="relative group overflow-hidden rounded-[3rem] bg-slate-50 border border-gray-100 p-12 flex items-center justify-center min-h-[500px] shadow-2xl shadow-blue-900/5">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-white z-10 pointer-events-none"></div>
-              <div className="relative z-0 transform group-hover:scale-110 transition-transform duration-[3000ms]">
-                {/* On White background, renders image logo */}
-                <Logo className="h-48 md:h-64" />
+              <div className="relative z-0 transform group-hover:scale-105 transition-transform duration-[3000ms]">
+                <Logo className="h-64 md:h-80" />
               </div>
             </div>
 
@@ -64,10 +61,7 @@ const Home: React.FC = () => {
                   Haul Hub Sdn Bhd is a young entity, its leadership brings over three decades of industry experience, covering import and export operations, liner coordination, shipment documentation, and end-to-end cargo management across Asia, the United Kingdom, and East Malaysia. This experience was gained through long-standing roles in reputable freight forwarding and humanitarian logistics organisations.
                 </p>
                 <p>
-                  The company’s expertise is rooted in the practical execution of conventional cargo, dangerous goods, project cargo, and time-critical movements, including heavy and oversized equipment such as turbines, generators, and industrial machinery, for both local and international markets.
-                </p>
-                <p>
-                  Haul Hub’s leadership has also been directly involved in humanitarian and emergency response logistics, supporting disaster relief operations through close coordination with donors, partners, and aviation service providers to ensure the timely delivery of relief items to affected areas. Currently, Haul Hub Sdn Bhd focuses on business development and strategic partnerships, leveraging its leadership’s operational depth to provide reliable, compliant, and cost-effective logistics solutions tailored to client and partner requirements.
+                  The company’s expertise is rooted in the practical execution of conventional cargo, dangerous goods, project cargo, and time-critical movements, including heavy and oversized equipment such as turbines, generators, and industrial machinery, for both local and international markets. Haul Hub’s leadership has also been directly involved in humanitarian and emergency response logistics, supporting disaster relief operations through close coordination with donors, partners, and aviation service providers to ensure the timely delivery of relief items to affected areas. Currently, Haul Hub Sdn Bhd focuses on business development and strategic partnerships, leveraging its leadership’s operational depth to provide reliable, compliant, and cost-effective logistics solutions tailored to client and partner requirements.
                 </p>
               </div>
 
@@ -112,7 +106,7 @@ const Home: React.FC = () => {
               { title: "Storage", img: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&q=80&w=800", desc: "Professional inventory control systems." },
               { title: "Packaging", img: "https://images.unsplash.com/photo-1512418490979-92798ccc13b0?auto=format&fit=crop&q=80&w=800", desc: "Industrial-grade heavy equipment packing." },
             ].map((service, idx) => (
-              <div key={idx} className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-50 group">
+              <div key={idx} className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 group">
                 <div className="h-64 overflow-hidden relative">
                   <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                   <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]" />

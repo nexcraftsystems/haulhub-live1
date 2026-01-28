@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface LogoProps {
@@ -7,10 +6,10 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ className = "h-12", isDark = false }) => {
-  // For dark backgrounds, user requested "wordstype" (text-based)
   if (isDark) {
+    // Wordstype only for dark backgrounds as requested
     return (
-      <div className={`flex items-center font-black text-white ${className}`}>
+      <div className={`flex items-center font-black text-white select-none ${className}`}>
         <span className="text-3xl md:text-5xl tracking-tighter lowercase">
           haulhub<span className="text-blue-500">.my</span>
         </span>
@@ -18,7 +17,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-12", isDark = false }) => {
     );
   }
 
-  // For light backgrounds, use the original logo image as requested
+  // Logo only (no background) for white/light backgrounds
   return (
     <div className={`flex items-center ${className}`}>
       <img 
@@ -26,13 +25,12 @@ const Logo: React.FC<LogoProps> = ({ className = "h-12", isDark = false }) => {
         alt="Haul Hub Logo" 
         className="h-full w-auto object-contain"
         onError={(e) => {
-          // Fallback if the URL fails to ensure branding is always visible
           const target = e.target as HTMLImageElement;
           target.style.display = 'none';
           const parent = target.parentElement;
           if (parent) {
             const span = document.createElement('span');
-            span.className = 'text-2xl font-black text-slate-800';
+            span.className = 'text-2xl font-black text-slate-800 tracking-tighter lowercase';
             span.innerHTML = 'haulhub<span class="text-blue-500">.my</span>';
             parent.appendChild(span);
           }

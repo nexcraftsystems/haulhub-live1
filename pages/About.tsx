@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Target, Compass, Users, Globe, BarChart3, Clock, CheckCircle2, Mail } from 'lucide-react';
 
@@ -52,7 +51,7 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-blue-600/5 rounded-[3rem] -rotate-2"></div>
               <img 
-                src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?auto=format&fit=crop&q=80&w=1200" 
+                src="https://images.unsplash.com/photo-1594913785162-e67850024f24?auto=format&fit=crop&q=80&w=1200" 
                 alt="Haul Hub Logistics Operations" 
                 className="rounded-[3rem] shadow-2xl relative z-10 border-[12px] border-white object-cover aspect-[4/5]"
               />

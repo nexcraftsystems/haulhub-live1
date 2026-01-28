@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { SearchX } from 'lucide-react';
 
@@ -10,9 +9,9 @@ const Careers: React.FC = () => {
           <SearchX size={48} />
         </div>
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Careers</h1>
-        <p className="text-xl text-gray-500 mb-8">No opening at the moment</p>
+        <p className="text-xl text-gray-500 mb-8 font-bold">No opening at the moment</p>
         <p className="text-gray-400 text-sm">
-          Thank you for your interest in joining Haul Hub. Please check back later or follow our social channels for future updates.
+          Thank you for your interest in joining Haul Hub. Please check back later or contact us directly for future opportunities.
         </p>
       </div>
     </div>
