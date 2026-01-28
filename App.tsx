@@ -9,10 +9,12 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import Industries from './pages/Industries';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pt-20">

@@ -6,60 +6,62 @@ const Services: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Header */}
-      <div className="bg-slate-900 py-32 text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <div className="bg-slate-900 py-24 text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1594913785162-e67850024f24?auto=format&fit=crop&q=80&w=2000" 
-            alt="Service BG" 
-            className="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2070&auto=format&fit=crop" 
+            alt="Cargo Vessel at Sea" 
+            className="w-full h-full object-cover opacity-20"
           />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight">Our Services</h1>
-          <p className="text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">Providing smart, connected, and efficient logistics solutions tailored for Malaysia and international markets.</p>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">Our Services</h1>
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            Smart, connected, and efficient logistics solutions tailored for Malaysia and international markets.
+          </p>
         </div>
       </div>
 
-      <section className="py-32">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
               { 
                 title: "Logistics", 
-                icon: <Zap size={44} />, 
-                desc: "End-to-end logistics management covering planning, coordination, and optimization to ensure faster, smarter, and seamless supply chain operations." 
+                icon: <Zap size={36} />, 
+                desc: "End-to-end logistics management covering precision planning, real-time coordination, and cost optimization." 
               },
               { 
                 title: "Cargo", 
-                icon: <Ship size={44} />, 
-                desc: "Reliable cargo handling solutions for domestic and cross-border movements, ensuring safe, timely, and fully traceable transport of goods." 
+                icon: <Ship size={36} />, 
+                desc: "Reliable cargo handling solutions for domestic and complex cross-border movements with full compliance." 
               },
               { 
                 title: "Trucking", 
-                icon: <Truck size={44} />, 
-                desc: "Modern and well-managed trucking solutions connecting businesses to key routes and hubs, supported by fleet tracking." 
+                icon: <Truck size={36} />, 
+                desc: "Modern trucking solutions connecting your business to key logistical routes and high-traffic regional hubs." 
               },
               { 
                 title: "Warehousing", 
-                icon: <Database size={44} />, 
-                desc: "Strategically located warehousing facilities offering scalable solutions, efficient handling, and seamless integration." 
+                icon: <Database size={36} />, 
+                desc: "Scalable warehousing solutions with tech-integrated handling for rapid retrieval and inventory flow." 
               },
               { 
                 title: "Storage", 
-                icon: <ShieldCheck size={44} />, 
-                desc: "Secure and cost-efficient storage solutions designed to support dynamic inventory needs with total safety." 
+                icon: <ShieldCheck size={36} />, 
+                desc: "Secure and cost-efficient storage environments designed to support dynamic and seasonal inventory needs." 
               },
               { 
                 title: "Packaging", 
-                icon: <Package size={44} />, 
-                desc: "Professional packaging services designed to safeguard goods during transport, ensuring product integrity." 
+                icon: <Package size={36} />, 
+                desc: "Professional industrial-grade packaging designed to safeguard high-value goods during demanding transport." 
               }
             ].map((s, i) => (
-              <div key={i} className="bg-slate-50 p-12 rounded-[3.5rem] border border-transparent hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
-                <div className="w-20 h-20 bg-white shadow-xl shadow-blue-900/5 rounded-3xl flex items-center justify-center text-blue-600 mb-10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 group-hover:rotate-6">
+              <div key={i} className="bg-slate-50 p-10 rounded-[2.5rem] border border-transparent hover:bg-white hover:shadow-2xl transition-all duration-500 group">
+                <div className="w-20 h-20 bg-white shadow-sm rounded-2xl flex items-center justify-center text-blue-600 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-lg">
                   {s.icon}
                 </div>
-                <h3 className="text-3xl font-extrabold text-slate-900 mb-6 tracking-tight">{s.title}</h3>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-5 tracking-tight">{s.title}</h3>
                 <p className="text-gray-500 text-lg leading-relaxed">{s.desc}</p>
               </div>
             ))}
@@ -68,12 +70,15 @@ const Services: React.FC = () => {
       </section>
       
       {/* Capability Statement */}
-      <section className="py-24 bg-slate-50 border-y border-gray-100">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-extrabold text-slate-900 mb-8">Integrated Compliance & Excellence</h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Every service we offer is underpinned by our commitment to compliance and safety. From time-critical shipments to specialized project cargo, Haul Hub ensures your business moves with the speed of global commerce and the reliability of local expertise.
+      <section className="py-20 bg-slate-900 text-white overflow-hidden relative">
+         <div className="absolute inset-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover" alt="Logistics Infrastructure" />
+         </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-extrabold mb-6">Integrated Compliance & Excellence</h2>
+            <p className="text-xl text-blue-100 leading-relaxed opacity-80">
+              Every service we offer is underpinned by our commitment to global compliance and safety. From time-critical shipments to specialized heavy-lift project cargo.
             </p>
           </div>
         </div>
