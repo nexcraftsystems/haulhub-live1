@@ -7,17 +7,15 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className = "h-12", isDark = false }) => {
   if (isDark) {
-    // Wordstype only for dark backgrounds as requested
     return (
       <div className={`flex items-center font-black text-white select-none ${className}`}>
-        <span className="text-3xl md:text-5xl tracking-tighter lowercase">
+        <span className="text-3xl md:text-5xl tracking-tighter lowercase drop-shadow-[0_2px_10px_rgba(59,130,246,0.3)]">
           haulhub<span className="text-blue-500">.my</span>
         </span>
       </div>
     );
   }
 
-  // Logo only (no background) for white/light backgrounds
   return (
     <div className={`flex items-center ${className}`}>
       <img 
@@ -30,7 +28,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-12", isDark = false }) => {
           const parent = target.parentElement;
           if (parent) {
             const span = document.createElement('span');
-            span.className = 'text-2xl font-black text-slate-800 tracking-tighter lowercase';
+            span.className = 'text-2xl font-black text-slate-900 tracking-tighter lowercase';
             span.innerHTML = 'haulhub<span class="text-blue-500">.my</span>';
             parent.appendChild(span);
           }

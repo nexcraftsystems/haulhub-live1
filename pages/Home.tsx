@@ -1,104 +1,121 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Network, Fullscreen, Radio, ArrowRight, ChevronDown } from 'lucide-react';
+import { Network, Fullscreen, Radio, ArrowRight, ChevronDown, ShieldCheck, Globe2, Zap } from 'lucide-react';
 import Logo from '../components/Logo';
 
 const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Full Page Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-slate-900 text-white -mt-20">
+      <section className="relative h-[95vh] flex items-center justify-center bg-slate-950 text-white -mt-20 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070&auto=format&fit=crop" 
             alt="Global Logistics Terminal" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-60 scale-105 animate-[slow-zoom_20s_ease-in-out_infinite]"
           />
-          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[1px]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-slate-900/40"></div>
+          <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/80"></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="max-w-4xl mx-auto">
-            <div className="mb-8 flex justify-center animate-in fade-in zoom-in duration-1000">
-               <Logo className="h-16 md:h-24" isDark />
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-10 flex justify-center animate-in fade-in zoom-in duration-1000">
+               <Logo className="h-16 md:h-24 drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]" isDark />
             </div>
-            <h1 className="text-4xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight animate-in slide-in-from-bottom-8 duration-700">
-              Your Lightning Fast <span className="text-blue-500 drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]">Logistics</span> Partner
+            <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[1] tracking-tight animate-in slide-in-from-bottom-12 duration-1000">
+              The <span className="text-blue-500 bg-clip-text">Engine</span> of Modern Trade
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed animate-in slide-in-from-bottom-12 duration-700 delay-100">
-              Haul Hub Sdn Bhd is a newly established logistics force delivering reliable, compliant, and cost-effective freight solutions across the globe.
+            <p className="text-lg md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed font-light animate-in slide-in-from-bottom-16 duration-1000 delay-200">
+              Haul Hub Sdn Bhd delivers surgical precision in global freight. Trusted, compliant, and relentlessly fast.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 animate-in slide-in-from-bottom-16 duration-700 delay-200">
-              <Link to="/services" className="px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all shadow-2xl shadow-blue-600/30 flex items-center gap-2 group text-lg">
-                Our Services <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-wrap justify-center gap-6 animate-in slide-in-from-bottom-20 duration-1000 delay-300">
+              <Link to="/services" className="px-12 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-black transition-all shadow-2xl shadow-blue-600/40 flex items-center gap-3 group text-lg uppercase tracking-wider">
+                Our Solutions <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/contact" className="px-10 py-5 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-bold transition-all border border-white/20 backdrop-blur-md text-lg">
-                Invest with us
+              <Link to="/contact" className="px-12 py-5 bg-white/5 hover:bg-white/10 text-white rounded-2xl font-black transition-all border border-white/20 backdrop-blur-xl text-lg uppercase tracking-wider">
+                Investor Relations
               </Link>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50 hidden md:block">
-          <ChevronDown size={32} />
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce text-blue-500/80 hidden md:block">
+          <ChevronDown size={40} />
         </div>
       </section>
 
-      {/* Emerging Markets Section */}
-      <section className="py-24 bg-white">
+      {/* Featured Badges */}
+      <div className="bg-slate-50 py-8 border-b border-slate-100">
+        <div className="container mx-auto px-4">
+           <div className="flex flex-wrap justify-center gap-8 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+              {['GLOBAL NETWORK', 'COMPLIANT FREIGHT', '24/7 TRACKING', 'HAZMAT CERTIFIED'].map(tag => (
+                <span key={tag} className="text-[10px] font-black tracking-[0.4em]">{tag}</span>
+              ))}
+           </div>
+        </div>
+      </div>
+
+      {/* Strategic Partner Section */}
+      <section className="py-32 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Logo Image Side */}
-            <div className="relative group overflow-hidden rounded-[2.5rem] shadow-2xl shadow-blue-900/10">
-              <img 
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?" 
-                alt="Strategic Partnership and Planning" 
-                className="w-full h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-[4000ms]"
-              />
-              <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                 <Logo className="h-32 md:h-40 drop-shadow-2xl" isDark />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-blue-600/10 rounded-[4rem] blur-2xl group-hover:bg-blue-600/20 transition-all duration-700"></div>
+              <div className="relative overflow-hidden rounded-[3rem] shadow-2xl shadow-blue-900/20">
+                <img 
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?" 
+                  alt="Strategic Planning" 
+                  className="w-full h-[600px] object-cover transform group-hover:scale-110 transition-transform duration-[6000ms]"
+                />
+                <div className="absolute inset-0 bg-slate-900/30 mix-blend-multiply"></div>
+                <div className="absolute inset-0 flex items-center justify-center p-12">
+                   <div className="text-center">
+                      <Logo className="h-32 drop-shadow-2xl mb-4" isDark />
+                      <p className="text-white text-xs font-black tracking-[0.3em] uppercase opacity-80">Established Precision</p>
+                   </div>
+                </div>
               </div>
             </div>
 
-            {/* Content Side */}
-            <div className="space-y-8">
-              <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-black uppercase tracking-widest">
-                Our Foundation
+            <div className="space-y-10">
+              <div className="space-y-4">
+                <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-[10px] font-black uppercase tracking-widest">
+                  Market Expertise
+                </div>
+                <h2 className="text-4xl md:text-6xl font-black text-slate-950 leading-[1.1]">
+                  Dominating <span className="text-blue-600">Emerging</span> Markets
+                </h2>
               </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-                Your Strategic Partner in <span className="text-blue-600">Emerging Markets</span>
-              </h2>
-              <div className="text-gray-600 space-y-5 leading-relaxed text-lg">
+              
+              <div className="text-slate-600 space-y-6 leading-relaxed text-lg font-light">
                 <p>
-                  While Haul Hub Sdn Bhd is a dynamic new entity, our leadership brings over three decades of mastery in global shipping, import/export operations, and complex documentation.
+                  At Haul Hub, we don't just move boxes; we move businesses. With leadership carrying over <strong>30 years of field-proven shipping mastery</strong>, we navigate the world's most complex trade routes.
                 </p>
                 <p>
-                  We specialize in the high-stakes execution of conventional cargo, dangerous goods, and time-critical project movements, ensuring your heaviest equipment reaches its destination without compromise.
+                  Specializing in conventional cargo, dangerous goods (DG), and time-critical project movements, we ensure your heaviest assets reach their destination without compromise.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-gray-100">
-                <div className="flex flex-col gap-3 group">
-                  <div className="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <Network size={24} />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-10 border-t border-slate-100">
+                <div className="flex items-center gap-4 group">
+                  <div className="w-14 h-14 bg-slate-900 text-white rounded-2xl flex items-center justify-center group-hover:bg-blue-600 transition-all shadow-lg">
+                    <Globe2 size={24} />
                   </div>
-                  <h5 className="font-bold text-slate-900">Global Network</h5>
+                  <div>
+                    <h5 className="font-black text-slate-950 uppercase text-xs tracking-wider">Global Reach</h5>
+                    <p className="text-slate-500 text-sm">International networks.</p>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-3 group">
-                  <div className="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <Fullscreen size={24} />
+                <div className="flex items-center gap-4 group">
+                  <div className="w-14 h-14 bg-slate-900 text-white rounded-2xl flex items-center justify-center group-hover:bg-blue-600 transition-all shadow-lg">
+                    <ShieldCheck size={24} />
                   </div>
-                  <h5 className="font-bold text-slate-900">Project Cargo</h5>
-                </div>
-                <div className="flex flex-col gap-3 group">
-                  <div className="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <Radio size={24} />
+                  <div>
+                    <h5 className="font-black text-slate-950 uppercase text-xs tracking-wider">Compliance</h5>
+                    <p className="text-slate-500 text-sm">Risk-free logistics.</p>
                   </div>
-                  <h5 className="font-bold text-slate-900">Live Tracking</h5>
                 </div>
               </div>
             </div>
@@ -106,30 +123,35 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Services Snapshot */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto mb-16">
-            <h2 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Our Core Services</h2>
-            <p className="text-lg text-gray-500">Premium logistics solutions engineered for reliability and scale.</p>
+      {/* Services Grid */}
+      <section className="py-32 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-950 tracking-tight">Core Solutions</h2>
+            <p className="text-lg text-slate-500 font-light">Integrated logistics services engineered for scale and speed.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Logistics", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop", desc: "End-to-end supply chain mastery." },
-              { title: "Cargo", img: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2070&auto=format&fit=crop", desc: "Conventional and dangerous goods experts." },
-              { title: "Trucking", img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop", desc: "Precision haulage across all terrains." },
-              { title: "Warehousing", img: "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop", desc: "Secure, compliant storage facilities." },
-              { title: "Storage", img: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2070&auto=format&fit=crop", desc: "Professional, climate-controlled inventory systems." },
-              { title: "Packaging", img: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=2070&auto=format&fit=crop", desc: "Industrial-grade equipment and specialized packing." },
+              { title: "Logistics", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop", desc: "Advanced supply chain architecture." },
+              { title: "Cargo", img: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2070&auto=format&fit=crop", desc: "Specialized hazardous & heavy cargo." },
+              { title: "Trucking", img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop", desc: "Regional precision haulage networks." },
+              { title: "Warehousing", img: "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop", desc: "High-security strategic storage." },
+              { title: "Project Cargo", img: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2070&auto=format&fit=crop", desc: "Custom moves for oversized assets." },
+              { title: "Industrial Packing", img: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=2070&auto=format&fit=crop", desc: "Reinforced export-grade packaging." },
             ].map((service, idx) => (
-              <div key={idx} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 group">
-                <div className="h-64 overflow-hidden relative">
-                  <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+              <div key={idx} className="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 border border-slate-100 group">
+                <div className="h-72 overflow-hidden relative">
+                  <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                  <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                  <div className="absolute top-6 left-6">
+                     <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                        <Zap size={20} className="text-blue-600" />
+                     </div>
+                  </div>
                 </div>
-                <div className="p-8 text-left">
-                  <h3 className="text-2xl font-bold mb-3 text-slate-900">{service.title}</h3>
-                  <p className="text-gray-500 leading-relaxed">{service.desc}</p>
+                <div className="p-10">
+                  <h3 className="text-2xl font-black mb-3 text-slate-950">{service.title}</h3>
+                  <p className="text-slate-500 font-light leading-relaxed">{service.desc}</p>
                 </div>
               </div>
             ))}
@@ -137,23 +159,36 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Invest Section */}
-      <section className="py-24 relative overflow-hidden bg-blue-600">
-        <div className="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1521791136064-7986c2959443?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover" alt="Strategic Partnership Handshake" />
+      {/* Investor CTA */}
+      <section className="py-32 relative overflow-hidden bg-slate-950">
+        <div className="absolute inset-0 opacity-30">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2959443?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover grayscale" alt="Strategy" />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="max-w-3xl mx-auto text-white">
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-8 tracking-tight">Shape the Future with Us</h2>
-            <p className="text-xl text-blue-50 mb-12 leading-relaxed opacity-90">
-              Join the region's latest logistics force. We are actively seeking strategic partnerships and investment collaborations to redefine supply chain excellence.
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/40 via-transparent to-slate-950"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl space-y-10">
+            <h2 className="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter">
+              Build the Future <br/> of <span className="text-blue-500">Logistics</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-slate-300 font-light max-w-2xl leading-relaxed">
+              We are expanding rapidly and seeking strategic partners to accelerate our global footprint. Join a company built on 30 years of integrity.
             </p>
-            <Link to="/contact" className="inline-block px-12 py-5 bg-white text-blue-600 font-bold rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all text-lg">
-              Link to Information Form
-            </Link>
+            <div className="flex gap-6">
+                <Link to="/contact" className="px-12 py-6 bg-blue-600 text-white font-black rounded-2xl shadow-2xl shadow-blue-600/40 hover:scale-105 active:scale-95 transition-all text-lg uppercase tracking-wider">
+                  Investor Access
+                </Link>
+            </div>
           </div>
         </div>
       </section>
+
+      <style>{`
+        @keyframes slow-zoom {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+          100% { transform: scale(1); }
+        }
+      `}</style>
     </div>
   );
 };
