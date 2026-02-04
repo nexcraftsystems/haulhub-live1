@@ -125,14 +125,14 @@ const About: React.FC = () => {
                 role: "Chief Business Officer", 
                 email: "medona.simon@haulhub.my",
                 desc: "With more than 30 years of hands-on forwarding experience, offering trusted expertise in global logistics and supply chain optimization.",
-                img: "/assets/medona-simon.png" 
+                img: "assets/medona simon.png" 
               },
               { 
                 name: "Ommana Ann", 
                 role: "Operations Manager", 
                 email: "ann.o@haulhub.my",
                 desc: "Managing Haul Hub’s day-to-day operations with a detail-driven approach and an unwavering commitment to operational excellence.",
-                img: "/assets/ommana-ann.png" 
+                img: "assets/Ommana’s.png" 
               },
             ].map((member, i) => (
               <div key={i} className="bg-slate-50 p-10 rounded-[2.5rem] border border-transparent hover:bg-white hover:shadow-2xl transition-all duration-500 group">
