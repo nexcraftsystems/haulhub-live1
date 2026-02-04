@@ -27,7 +27,10 @@ const About: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
-              <h2 className="text-4xl font-extrabold text-slate-900 leading-tight">Your Logistics Partner</h2>
+              <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-black uppercase tracking-widest">
+                Our Identity
+              </div>
+              <h2 className="text-4xl font-extrabold text-slate-900 leading-tight">Your Dedicated <span className="text-blue-600">Logistics Partner</span></h2>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Haul Hub Sdn Bhd is a newly established logistics and freight solutions company, focused on business development and the delivery of reliable, compliant, and cost-effective logistics services.
               </p>
@@ -50,10 +53,11 @@ const About: React.FC = () => {
               </div>
             </div>
             <div className="relative">
+              <div className="absolute -inset-4 bg-blue-600/5 rounded-[3rem] -z-10 transform rotate-3"></div>
               <img 
                 src="https://images.unsplash.com/photo-1594913785162-e67850024f24?q=80&w=2070&auto=format&fit=crop" 
                 alt="Logistics Coordination" 
-                className="rounded-[2.5rem] shadow-2xl border-8 border-white object-cover aspect-[4/3]"
+                className="rounded-[2.5rem] shadow-2xl border-8 border-white object-cover aspect-[4/3] w-full"
               />
             </div>
           </div>
@@ -106,10 +110,13 @@ const About: React.FC = () => {
 
       {/* Executive Leadership */}
       <section className="py-24">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
+        <div className="container mx-auto px-4 text-center max-w-5xl">
           <div className="mb-20">
+            <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-black uppercase tracking-widest mb-4">
+              Our Leadership
+            </div>
             <h2 className="text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">Executive Leadership</h2>
-            <p className="text-lg text-gray-500">Our senior leaders bring combined decades of field-proven logistics excellence.</p>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">Our senior leaders bring combined decades of field-proven logistics excellence to every client partnership.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
@@ -118,32 +125,34 @@ const About: React.FC = () => {
                 role: "Chief Business Officer", 
                 email: "medona.simon@haulhub.my",
                 desc: "With more than 30 years of hands-on forwarding experience, offering trusted expertise in global logistics and supply chain optimization.",
-                img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+                img: "https://r2.erweima.ai/ai_image/957df38c-85a6-4447-9877-c93f0b240186_3840.jpg" 
               },
               { 
                 name: "Ommana Ann", 
                 role: "Operations Manager", 
                 email: "ann.o@haulhub.my",
                 desc: "Managing Haul Hub’s day-to-day operations with a detail-driven approach and an unwavering commitment to operational excellence.",
-                img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop" 
+                img: "https://r2.erweima.ai/ai_image/f64c01f6-a944-4861-a083-ef9490333333_3840.jpg" 
               },
             ].map((member, i) => (
-              <div key={i} className="bg-slate-50 p-10 rounded-[2.5rem] border border-transparent hover:bg-white hover:shadow-2xl transition-all duration-500">
-                <div className="relative mb-8 w-40 h-40 mx-auto">
-                  <div className="relative w-40 h-40 rounded-full overflow-hidden border-8 border-white shadow-xl grayscale hover:grayscale-0 transition-all duration-500">
-                    <img src={member.img} alt={member.name} className="w-full h-full object-cover scale-110" />
+              <div key={i} className="bg-slate-50 p-10 rounded-[2.5rem] border border-transparent hover:bg-white hover:shadow-2xl transition-all duration-500 group">
+                <div className="relative mb-10 w-56 h-56 mx-auto">
+                  <div className="absolute inset-0 bg-blue-600 rounded-[3rem] transform rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-10"></div>
+                  <div className="relative w-56 h-56 rounded-[2.5rem] overflow-hidden border-[6px] border-white shadow-xl transition-all duration-500">
+                    <img src={member.img} alt={member.name} className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700" />
                   </div>
                 </div>
                 <div className="space-y-5">
                   <div>
-                    <h4 className="text-2xl font-bold text-slate-900">{member.name}</h4>
-                    <p className="text-blue-600 font-black text-sm uppercase tracking-widest">{member.role}</p>
-                    <div className="flex justify-center gap-2 mt-2 text-sm text-gray-500 font-medium">
+                    <h4 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{member.name}</h4>
+                    <p className="text-blue-600 font-black text-sm uppercase tracking-widest mt-1">{member.role}</p>
+                    <div className="flex justify-center items-center gap-2 mt-4 text-sm text-slate-400 font-semibold group-hover:text-slate-600 transition-colors">
                        <Mail size={16} className="text-blue-500" />
                        <span>{member.email}</span>
                     </div>
                   </div>
-                  <p className="text-gray-600 leading-relaxed italic">"{member.desc}"</p>
+                  <div className="h-px w-12 bg-blue-200 mx-auto"></div>
+                  <p className="text-gray-600 leading-relaxed italic px-4">"{member.desc}"</p>
                 </div>
               </div>
             ))}
