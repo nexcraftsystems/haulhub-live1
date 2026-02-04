@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Target, Compass, Users, Globe, BarChart3, Clock, CheckCircle2, Mail, User, CameraOff } from 'lucide-react';
 
@@ -61,14 +62,20 @@ const About: React.FC = () => {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
+            
+            {/* The "Worlds Picture Round" Container */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
               <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl -z-10"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1566633806327-68e152abc39b?q=80&w=2070&auto=format&fit=crop" 
-                alt="Modern Logistics Coordination" 
-                className="rounded-[3rem] shadow-2xl border-[12px] border-white object-cover aspect-[4/3] w-full"
-              />
+              
+              <div className="relative w-full max-w-[500px] aspect-square rounded-full border-[12px] border-white shadow-[0_40px_100px_-30px_rgba(2,6,23,0.3)] overflow-hidden group">
+                <img 
+                  src="https://images.unsplash.com/photo-1585713181935-d5f622cc2415?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Global Trade Network Globe" 
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[10s] ease-linear"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 via-transparent to-transparent"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -122,77 +129,86 @@ const About: React.FC = () => {
       </section>
 
       {/* Executive Leadership */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 text-center max-w-6xl">
-          <div className="mb-20">
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-24">
             <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4">
               Executive Board
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">The Minds Behind Haul Hub</h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">Expertise forged in the field, leading with transparency and a global perspective.</p>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">The Minds Behind Haul Hub</h2>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto font-light leading-relaxed">
+              Expertise forged in the field, leading with transparency, integrity, and a global perspective.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+          
+          <div className="grid grid-cols-1 gap-16 lg:gap-24">
             {[
               { 
                 name: "Medona Simon", 
                 role: "Chief Business Officer", 
                 email: "medona.simon@haulhub.my",
-                desc: "30+ years of forwarding mastery. A visionary in global supply chain optimization and strategic business development.",
-                img: "https://drive.google.com/thumbnail?id=1oegU8BucsAi1hn8G-sd1jqBYLzoAPCHR&sz=w400" 
+                desc: "With 30+ years of forwarding mastery, Medona is a visionary in global supply chain optimization and strategic business development. She has successfully navigated some of the industry's most complex regulatory landscapes.",
+                img: "https://drive.google.com/thumbnail?id=1oegU8BucsAi1hn8G-sd1jqBYLzoAPCHR&sz=w1200" 
               },
               { 
                 name: "Ommana Ann", 
                 role: "Operations Manager", 
                 email: "ann.o@haulhub.my",
-                desc: "The core of our daily execution. Detail-driven and relentless in ensuring operational safety and on-time performance.",
-                img: "https://drive.google.com/thumbnail?id=1qBaA7zpHC3rmhxLOtmHBwWkDKjjSRfzm&sz=w400" 
+                desc: "The core of our daily execution. Ann is detail-driven and relentless in ensuring operational safety and on-time performance. Her leadership ensures that Haul Hub maintains its reputation for surgical precision in freight.",
+                img: "https://drive.google.com/thumbnail?id=1qBaA7zpHC3rmhxLOtmHBwWkDKjjSRfzm&sz=w1200" 
               },
             ].map((member, i) => (
-              <div key={i} className="group relative bg-white p-2 rounded-[3rem] shadow-xl shadow-slate-200/50 hover:shadow-blue-900/10 transition-all duration-700 overflow-hidden border border-slate-100">
-                <div className="relative p-8 md:p-12 space-y-8 bg-white rounded-[2.5rem] z-10 h-full">
-                  <div className="relative w-40 h-40 mx-auto group-hover:scale-105 transition-transform duration-700">
-                    <div className="absolute inset-0 bg-blue-600 rounded-[2.5rem] rotate-6 opacity-5 group-hover:rotate-12 transition-transform"></div>
-                    <div className="relative w-40 h-40 rounded-[2.5rem] overflow-hidden border-[6px] border-slate-50 shadow-inner bg-slate-100 flex items-center justify-center">
-                      <img 
-                        src={getEncodedPath(member.img)} 
-                        alt={member.name} 
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const parent = target.parentElement;
-                          if (parent && !parent.querySelector('.fallback-avatar')) {
-                            const fallback = document.createElement('div');
-                            fallback.className = 'fallback-avatar w-full h-full flex flex-col items-center justify-center bg-blue-50 text-blue-600';
-                            fallback.innerHTML = `
-                              <span class="text-4xl font-black mb-1">${getInitials(member.name)}</span>
-                              <span class="text-[8px] font-black uppercase tracking-widest opacity-40">Profile</span>
-                            `;
-                            parent.appendChild(fallback);
-                          }
-                        }}
-                      />
-                    </div>
+              <div key={i} className={`flex flex-col lg:flex-row bg-slate-50 rounded-[4rem] overflow-hidden group hover:bg-white hover:shadow-[0_50px_100px_-20px_rgba(2,6,23,0.12)] transition-all duration-700 border border-slate-100 items-stretch min-h-[500px] lg:min-h-[600px] ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+                
+                {/* Massive Portrait Container - object-top ensures the head isn't cut */}
+                <div className="w-full lg:w-1/2 relative bg-slate-200 overflow-hidden flex items-start justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent z-10"></div>
+                  <img 
+                    src={getEncodedPath(member.img)} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover object-top scale-100 group-hover:scale-105 transition-transform duration-[4s]"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent && !parent.querySelector('.fallback-avatar')) {
+                        const fallback = document.createElement('div');
+                        fallback.className = 'fallback-avatar w-full h-full flex flex-col items-center justify-center bg-slate-100 text-slate-400';
+                        fallback.innerHTML = `
+                          <span class="text-8xl font-black mb-2 opacity-20">${getInitials(member.name)}</span>
+                          <span class="text-xs font-black uppercase tracking-[0.3em]">Profile Media</span>
+                        `;
+                        parent.appendChild(fallback);
+                      }
+                    }}
+                  />
+                </div>
+
+                {/* Narrative Content */}
+                <div className="w-full lg:w-1/2 p-10 md:p-14 lg:p-20 flex flex-col justify-center text-left">
+                  <div className="mb-10">
+                    <span className="text-blue-600 font-black text-xs uppercase tracking-[0.4em] block mb-4 bg-blue-50 w-fit px-4 py-1.5 rounded-full">
+                      {member.role}
+                    </span>
+                    <h4 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tighter leading-tight mb-2">
+                      {member.name}
+                    </h4>
+                    <div className="h-1.5 w-24 bg-blue-600 rounded-full mt-4"></div>
                   </div>
+                  
+                  <p className="text-slate-500 leading-relaxed text-xl mb-12 font-light italic border-l-8 border-slate-200 pl-8">
+                    "{member.desc}"
+                  </p>
 
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-2xl font-black text-slate-900">{member.name}</h4>
-                      <p className="text-blue-600 font-black text-[10px] uppercase tracking-[0.3em] mt-2 bg-blue-50 inline-block px-3 py-1 rounded-full">
-                        {member.role}
-                      </p>
-                    </div>
-                    
-                    <p className="text-slate-500 leading-relaxed italic text-sm px-4">
-                      "{member.desc}"
-                    </p>
-
-                    <div className="pt-6 border-t border-slate-50">
-                        <a href={`mailto:${member.email}`} className="flex items-center justify-center gap-2 text-sm text-slate-400 hover:text-blue-600 transition-colors group/link">
-                          <Mail size={16} className="text-blue-500" />
-                          <span className="font-semibold">{member.email}</span>
-                        </a>
-                    </div>
+                  <div className="mt-auto pt-10 border-t border-slate-200">
+                      <a href={`mailto:${member.email}`} className="flex items-center gap-4 text-slate-700 hover:text-blue-600 transition-all group/link font-bold text-lg tracking-tight overflow-hidden">
+                        <div className="w-14 h-14 bg-white shadow-md rounded-2xl flex items-center justify-center text-blue-500 group-hover/link:bg-blue-600 group-hover/link:text-white group-hover/link:scale-110 transition-all duration-500 shrink-0">
+                          <Mail size={24} />
+                        </div>
+                        <span className="group-hover/link:translate-x-1 transition-transform duration-500 break-all overflow-hidden text-base md:text-lg">
+                          {member.email}
+                        </span>
+                      </a>
                   </div>
                 </div>
               </div>
@@ -207,8 +223,8 @@ const About: React.FC = () => {
           <img src="https://images.unsplash.com/photo-1521791136064-7986c2959443?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover" alt="Partnership" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8">Ready to move with the best?</h2>
-          <a href="#/contact" className="inline-block px-12 py-5 bg-white text-blue-600 font-bold rounded-2xl hover:scale-105 transition-all shadow-xl shadow-blue-900/20">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 tracking-tight">Ready to move with the best?</h2>
+          <a href="#/contact" className="inline-block px-12 py-5 bg-white text-blue-600 font-bold rounded-2xl hover:scale-105 transition-all shadow-xl shadow-blue-900/20 uppercase tracking-widest text-sm">
             Work With Us
           </a>
         </div>

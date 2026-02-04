@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Network, Fullscreen, Radio, ArrowRight, ChevronDown, ShieldCheck, Globe2, Zap } from 'lucide-react';
@@ -14,27 +15,28 @@ const Home: React.FC = () => {
             alt="Global Logistics Terminal" 
             className="w-full h-full object-cover opacity-60 scale-105 animate-[slow-zoom_20s_ease-in-out_infinite]"
           />
-          <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-slate-950/50 backdrop-blur-[2px]"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/80"></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="max-w-5xl mx-auto">
             <div className="mb-10 flex justify-center animate-in fade-in zoom-in duration-1000">
-               <Logo className="h-16 md:h-24 drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]" isDark />
+               <Logo className="h-16 md:h-24 drop-shadow-[0_0_30px_rgba(59,130,246,0.2)]" isDark />
             </div>
-            <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[1] tracking-tight animate-in slide-in-from-bottom-12 duration-1000">
-              The <span className="text-blue-500 bg-clip-text">Engine</span> of Modern Trade
+            <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[1] tracking-tighter animate-in slide-in-from-bottom-12 duration-1000">
+              Your Lightning Fast <br/> 
+              <span className="text-blue-500 drop-shadow-[0_0_25px_rgba(59,130,246,0.8)] animate-pulse">Logistics</span> Partner
             </h1>
             <p className="text-lg md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed font-light animate-in slide-in-from-bottom-16 duration-1000 delay-200">
-              Haul Hub Sdn Bhd delivers surgical precision in global freight. Trusted, compliant, and relentlessly fast.
+              Haul Hub Sdn Bhd delivers surgical precision in global freight. Trusted, compliant, and built for speed.
             </p>
             <div className="flex flex-wrap justify-center gap-6 animate-in slide-in-from-bottom-20 duration-1000 delay-300">
               <Link to="/services" className="px-12 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-black transition-all shadow-2xl shadow-blue-600/40 flex items-center gap-3 group text-lg uppercase tracking-wider">
                 Our Solutions <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link to="/contact" className="px-12 py-5 bg-white/5 hover:bg-white/10 text-white rounded-2xl font-black transition-all border border-white/20 backdrop-blur-xl text-lg uppercase tracking-wider">
-                Investor Relations
+                Invest With Us
               </Link>
             </div>
           </div>
