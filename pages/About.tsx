@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Target, Compass, Users, Globe, BarChart3, Clock, CheckCircle2, Mail } from 'lucide-react';
+import { Target, Compass, Users, Globe, BarChart3, Clock, CheckCircle2, Mail, User } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -55,8 +55,8 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-blue-600/5 rounded-[3rem] -z-10 transform rotate-3"></div>
               <img 
-                src="https://images.unsplash.com/photo-1594913785162-e67850024f24?q=80&w=2070&auto=format&fit=crop" 
-                alt="Logistics Coordination" 
+                src="https://images.unsplash.com/photo-1566633806327-68e152abc39b?q=80&w=2070&auto=format&fit=crop" 
+                alt="Modern Logistics Coordination" 
                 className="rounded-[2.5rem] shadow-2xl border-8 border-white object-cover aspect-[4/3] w-full"
               />
             </div>
@@ -125,21 +125,39 @@ const About: React.FC = () => {
                 role: "Chief Business Officer", 
                 email: "medona.simon@haulhub.my",
                 desc: "With more than 30 years of hands-on forwarding experience, offering trusted expertise in global logistics and supply chain optimization.",
-                img: "https://r2.erweima.ai/ai_image/957df38c-85a6-4447-9877-c93f0b240186_3840.jpg" 
+                img: "/assets/medona-simon.png" 
               },
               { 
                 name: "Ommana Ann", 
                 role: "Operations Manager", 
                 email: "ann.o@haulhub.my",
                 desc: "Managing Haul Hub’s day-to-day operations with a detail-driven approach and an unwavering commitment to operational excellence.",
-                img: "https://r2.erweima.ai/ai_image/f64c01f6-a944-4861-a083-ef9490333333_3840.jpg" 
+                img: "/assets/ommana-ann.png" 
               },
             ].map((member, i) => (
               <div key={i} className="bg-slate-50 p-10 rounded-[2.5rem] border border-transparent hover:bg-white hover:shadow-2xl transition-all duration-500 group">
                 <div className="relative mb-10 w-56 h-56 mx-auto">
                   <div className="absolute inset-0 bg-blue-600 rounded-[3rem] transform rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-10"></div>
-                  <div className="relative w-56 h-56 rounded-[2.5rem] overflow-hidden border-[6px] border-white shadow-xl transition-all duration-500">
-                    <img src={member.img} alt={member.name} className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700" />
+                  <div className="relative w-56 h-56 rounded-[2.5rem] overflow-hidden border-[6px] border-white shadow-xl transition-all duration-500 bg-slate-200 flex items-center justify-center">
+                    <img 
+                      src={member.img} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-700"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          const iconDiv = document.createElement('div');
+                          iconDiv.className = 'w-full h-full flex flex-col items-center justify-center bg-blue-50 text-blue-400';
+                          iconDiv.innerHTML = `
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <span class="mt-4 font-black text-[10px] uppercase tracking-widest opacity-40">Photo Pending</span>
+                          `;
+                          parent.appendChild(iconDiv);
+                        }
+                      }}
+                    />
                   </div>
                 </div>
                 <div className="space-y-5">
